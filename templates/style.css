@@ -1,0 +1,84 @@
+/* Entitats de Campanar: colours and fonts from the original site settings
+   (nav #f2f3d9, header black/white with Paytone One, body Open Sans). */
+:root {
+  --bg: #faf9f2; --surface: #ffffff; --fg: #262618; --muted: #5f5f52; --line: #e4e3d3;
+  --accent: #8a4b00; --accent-soft: #fbefd9; --tag: #f2f3d9; --nav: #f2f3d9;
+  --hero-fg: #ffffff;
+  --c-cultural: #b3361d; --c-social: #1f6f8b; --c-esport: #2e7d32; --c-educacio: #6a3fa0; --c-salut: #c2185b;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #151510; --surface: #1f1f18; --fg: #efeee4; --muted: #b2b1a2; --line: #34342a;
+          --accent: #f0b35a; --accent-soft: #3a2c16; --tag: #2b2b20; --nav: #23231a;
+          --c-cultural: #f08a72; --c-social: #6cc3df; --c-esport: #7fcf83; --c-educacio: #b99ae6; --c-salut: #f27fae; }
+}
+body { font-family: "Open Sans", system-ui, -apple-system, "Segoe UI", sans-serif; }
+h1, h2, .site-title span { font-family: "Paytone One", "Open Sans", sans-serif; font-weight: 400; letter-spacing: 0; }
+
+.site-header { background: var(--nav); position: sticky; top: 0; z-index: 10; }
+.site-title { display: flex; align-items: center; gap: .6rem; }
+.site-logo { width: 40px; height: 40px; border-radius: 0; object-fit: contain; }
+.site-nav a { color: var(--fg); font-weight: 600; }
+
+/* Hero */
+.hero { margin: 1.5rem 0 0; padding: clamp(2rem, 6vw, 4rem) clamp(1.25rem, 4vw, 3rem); border-radius: 16px;
+        color: var(--hero-fg); text-align: center;
+        background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.65)),
+                    url("https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0a575cbf-525b-4110-9edc-ef83861a7cc4_1280x960.jpeg") center/cover, #000; }
+.hero h1 { margin: 0 0 .5rem; font-size: clamp(2rem, 6vw, 3.4rem); }
+.hero p { margin: 0 auto; max-width: 38rem; font-size: 1.1rem; opacity: .95; }
+
+/* Category colours */
+[data-cat="Cultural"], .chip[data-value="Cultural"] { --cat: var(--c-cultural); }
+[data-cat="Social"], .chip[data-value="Social"] { --cat: var(--c-social); }
+[data-cat="Esport"], .chip[data-value="Esport"] { --cat: var(--c-esport); }
+[data-cat="Educació"], .chip[data-value="Educació"] { --cat: var(--c-educacio); }
+[data-cat="Salut"], .chip[data-value="Salut"] { --cat: var(--c-salut); }
+.tag[data-cat] { background: color-mix(in srgb, var(--cat, var(--muted)) 14%, transparent);
+                 color: var(--cat, var(--muted)); font-weight: 600; text-decoration: none; }
+
+/* Cards */
+.card { display: flex; flex-direction: column; padding: 0 0 1.1rem; overflow: hidden; }
+.card > :not(.card-logo) { padding-left: 1.1rem; padding-right: 1.1rem; }
+.card .catalog-match { margin-left: 1.1rem; margin-right: 1.1rem; padding-left: 0; padding-right: 0; }
+.card-logo { aspect-ratio: 16 / 9; margin: 0 !important; background: #fff; display: flex; align-items: center;
+             justify-content: center; border-bottom: 1px solid var(--line); position: relative; overflow: hidden; }
+.card-logo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 1rem;
+                 border-radius: 0; margin: 0 !important; }
+.card-logo:empty, .card-logo.no-img { background: color-mix(in srgb, var(--cat, var(--muted)) 12%, var(--surface)); }
+.card-logo:empty::before, .card-logo.no-img::before { content: attr(data-cat); color: var(--cat, var(--muted));
+             font-family: "Paytone One", sans-serif; font-size: 1.3rem; opacity: .7; }
+.card h3 { margin-top: 1rem !important; font-size: 1.15rem; }
+.card-cat { margin: 0 !important; }
+.card-desc { color: var(--muted); font-size: .93rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* Call to action */
+.cta { margin: 3rem 0 0; padding: 1.5rem; border-radius: 16px; background: var(--nav); text-align: center; }
+.cta p { margin: .3rem 0; }
+.button { display: inline-block; margin-top: .5rem; padding: .6rem 1.2rem; border-radius: 999px; background: var(--fg);
+          color: var(--bg); text-decoration: none; font-weight: 600; }
+
+/* Detail page */
+.back { margin: 1.5rem 0 0; }
+.back a { text-decoration: none; }
+.entity-head { display: grid; grid-template-columns: 200px 1fr; gap: 1.75rem; align-items: center; margin: 1.5rem 0; }
+.entity-logo { aspect-ratio: 1; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+.entity-head h1 { margin: .3rem 0 .5rem; }
+.entity-cat { margin: 0; }
+.lead { font-size: 1.15rem; color: var(--muted); margin: 0; }
+.entity-body { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 2rem; align-items: start; }
+.entity-body h2 { font-size: 1.35rem; }
+.entity-side { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 0 1.25rem 1rem;
+               overflow-wrap: anywhere; }
+.entity-side h2 { font-size: 1.1rem; margin-top: 1.25rem; }
+.entity-main > :first-child, .entity-side > :first-child { margin-top: 1.25rem; }
+blockquote { border-left-color: var(--accent); color: var(--fg); background: var(--accent-soft); border-radius: 0 8px 8px 0; padding: .6em 1em; }
+blockquote p { margin: 0; }
+@media (max-width: 720px) {
+  .entity-head { grid-template-columns: 1fr; }
+  .entity-logo { max-width: 160px; }
+  .entity-body { grid-template-columns: 1fr; }
+}
+
+/* Filter chips: selected chip uses its category colour */
+.chip[aria-pressed="true"][data-value] { background: var(--cat); border-color: var(--cat); color: var(--surface); }
+mark.catalog-hit { background: #ffe08a; }

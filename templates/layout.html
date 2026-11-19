@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{page_title}}</title>
+<meta name="description" content="{{description}}">
+<meta property="og:title" content="{{page_title}}">
+<meta property="og:description" content="{{description}}">
+<link rel="icon" href="https://i.postimg.cc/8cj9T8Fj/xec-small.png">
+<link rel="stylesheet" href="{{root}}assets/style.css">
+{{head}}
+</head>
+<body class="{{page_class}}">
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-title" href="{{home}}"><img class="site-logo" src="https://i.postimg.cc/8cj9T8Fj/xec-small.png" alt="" width="40" height="40"><span>{{site_title}}</span></a>
+    {{nav}}
+  </div>
+</header>
+<main class="wrap">
+{{content}}
+</main>
+<footer class="site-footer"><div class="wrap">{{footer}}</div></footer>
+<script src="{{root}}assets/catalog.js" defer></script>
+<script src="{{root}}assets/site.js" defer></script>
+</body>
+</html>

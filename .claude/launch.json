@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "catalog",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["catalog.py", "serve", "--port", "8000"],
+      "port": 8000
+    }
+  ]
+}

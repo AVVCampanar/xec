@@ -1,0 +1,37 @@
+{
+  "title": "Entitats de Campanar",
+  "description": "Catàleg d'entitats del barri de Campanar a València.",
+  "language": "ca",
+  "source": "https://docs.google.com/spreadsheets/d/1W4JV5WIJp6YiaZ9mHnu2s63h3tGu9JtpqyknmqVeKCo/edit?gid=1149689709#gid=1149689709",
+  "title_column": "Nom de la entitat",
+  "list_separator": ",",
+  "search_columns": [
+    "Nom de la entitat",
+    "Descripció",
+    "Nota breu adicional",
+    "Categoria",
+    "Que fem",
+    "Que oferim",
+    "Ubicació",
+    "Activitats desenvolupades"
+  ],
+  "filters": [
+    {
+      "column": "Categoria",
+      "label": "Categoria"
+    }
+  ],
+  "nav": [
+    {
+      "label": "Sobre el projecte",
+      "url": "sobre.html"
+    },
+    {
+      "label": "Uneix-te",
+      "url": "https://forms.gle/2dbj3MyJZKnsjNWbA"
+    }
+  ],
+  "footer": "Creat per la Xarxa d'entitats de Campanar · [Sobre el projecte](https://www.campanar.net/p/barri) · [Uneix la teua entitat](https://forms.gle/2dbj3MyJZKnsjNWbA)",
+  "head": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Paytone+One&display=swap\">",
+  "output": "_site"
+}
